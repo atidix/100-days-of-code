@@ -47,3 +47,5 @@ if dir == "left":
       print("Game Over.")
   else:
     print("You are eaten by crocodiles. Game over.")
+else:
+  print("You have fallen into a hole. Game over.")
