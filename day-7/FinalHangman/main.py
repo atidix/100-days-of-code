@@ -38,7 +38,7 @@ while not end_of_game:
 
         if lives == 0:
             end_of_game = True
-            print("You lose.")
+            print(f"The correct answer was {chosen_word}. You lose.")
 
     print(f"{' '.join(display)}")
 
