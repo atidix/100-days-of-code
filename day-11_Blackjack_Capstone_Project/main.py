@@ -39,10 +39,10 @@ def blackjack_game():
         
 
     else:
-
+        game = True
         user_score = calculate_score(user_cards)
         computer_score = calculate_score(computer_cards)
-        game = True
+        
         while game:
             if user_score > 21:
                 game = False
