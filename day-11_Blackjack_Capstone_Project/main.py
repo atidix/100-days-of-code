@@ -27,7 +27,8 @@ def blackjack_game():
             list_of_cards.remove(11)
             list_of_cards.append(1)
         elif sum(list_of_cards) == 21:
-            return 0
+            print("It's a blackjack!")
+            return sum(list_of_cards)
         return sum(list_of_cards)
 
     print(f"Your cards are {user_cards} and your current score is: {calculate_score(user_cards)}")
@@ -46,7 +47,7 @@ def blackjack_game():
         while game:
             if user_score > 21:
                 game = False
-                
+                break
             else:
                 answer = input("Do you want to draw another card? 'y' or 'n'? ")
                 if user_score < 21 and answer.lower() == 'y':
