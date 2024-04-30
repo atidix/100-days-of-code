@@ -5,6 +5,7 @@ def clear():
 from game_data import data
 from art import logo, vs
 
+print(logo)
 
 def random_entry():
     entry = random.choice(data)
@@ -23,15 +24,15 @@ def game():
             entry_B = random_entry()
             B = f_count
 
-    while game_continue:
-        print(logo)            
+    while game_continue:            
         print(f"Compare A: {entry_A}")
         print (f"{vs}\n")
         print(f"Against B: {entry_B}\n")
         user_input = input("Who has more followers? Type 'A' or 'B': ").upper()
-        clear()
         xyz = compare_entry(A, B, user_input)
         if xyz == 1:
+            clear()
+            print(logo)
             Current_score += 1
             print (f"You're right! Current score: {Current_score}")
             entry_A = entry_B
