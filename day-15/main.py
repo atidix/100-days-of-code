@@ -70,8 +70,6 @@ while coffee_machine:
 
     money_in_machine += MENU[coffee_choice]['cost']
 
-    print_report(resources, money_in_machine)
-
 
         
 
