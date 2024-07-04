@@ -6,7 +6,6 @@
 #Hint1: This method will help you: https://www.w3schools.com/python/ref_file_readlines.asp
     #Hint2: This method will also help you: https://www.w3schools.com/python/ref_string_replace.asp
         #Hint3: THis method will help you: https://www.w3schools.com/python/ref_string_strip.asp
-names = []
 
 with open("day-24/Input/Names/invited_names.txt") as name:
     names = name.readlines()
@@ -16,6 +15,8 @@ new_names = []
 for person in names:
     person = person.strip()
     new_names.append(person)
+
+print(new_names)
 
 with open ("day-24/Input/Letter/starting_letter.txt") as starting:
     invite = starting.read()
