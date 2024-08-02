@@ -13,12 +13,20 @@ def keep_guessing():
 
 data = pandas.read_csv("day-25/India-States-Game/36.csv")
 tim = turtle.Turtle()
+all_states = data.state.to_list()
 guessed_states = []
 game_on = True
 
 while game_on == True:
     answer_state = keep_guessing()
     guess = answer_state.title()
+    if guess == "Exit":
+        # missing_states = []
+        # for state in all_states:
+        #     if guessed_states not in all_states:
+        #         missing_states.append(state)
+        #         print(missing_states)
+        break
     check = data[data.state == guess]
     if not check.empty:
         x_coor = check.x.item()
@@ -31,5 +39,6 @@ while game_on == True:
         if len(guessed_states) == 36:
             game_on = False
             print("You Win!")
+
 
 turtle.mainloop()
