@@ -14,11 +14,16 @@ def keep_guessing():
 data = pandas.read_csv("day-25/US-States-Game/50_states.csv")
 tim = turtle.Turtle()
 guessed_states = []
+all_states = data.state.to_list()
 game_on = True
 
 while game_on == True:
     answer_state = keep_guessing()
     guess = answer_state.title()
+    if guess == "Exit":
+        missing_states = [state for state in all_states if state not in guessed_states]
+        print(missing_states)
+        break
     check = data[data.state == guess]
     if not check.empty:
         x_coor = check.x.item()
